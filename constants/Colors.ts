@@ -8,9 +8,9 @@ const tintColorDark = '#fff';
 
 export const Colors = {
   light: {
-    textWhite: '#F0F5F4',
-    background: '#fff',
-    overlay: '#151E1D',
+    // textWhite: '#F0F5F4',
+    background: '#E1EAE9',
+    text: "#151E1D",
     goodMood: "7FD178",
     badMood: "#D75F57",
     neutralMood: "#EBA352",
