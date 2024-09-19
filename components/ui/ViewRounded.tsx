@@ -16,7 +16,9 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 25,
     backgroundColor: Colors.light.text,
     alignItems: "center",
+    // justifyContent: "center",
     padding: 30,
-    overflow: "hidden",
+    justifyContent: "space-between",
+    // overflow: "hidden",
   },
 });

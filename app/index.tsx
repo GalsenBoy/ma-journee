@@ -15,27 +15,29 @@ export default function Home() {
       <ThemedText type="title" style={styles.title}>
         Ma Journée
       </ThemedText>
-      <ViewRounded>
-        <View style={styles.imageContainer}>
-          <Image
-            style={styles.image}
-            source={require("@/assets/images/heroHome.jpg")}
-          />
-          <Overlay />
-        </View>
-        <View>
-          {TextHome.map((text, index) => (
-            <ThemedText
-              key={index}
-              type="italic"
-              style={{
-                color: Colors.light.darkText,
-                marginBottom: text.marginBottom,
-              }}
-            >
-              {text.content}
-            </ThemedText>
-          ))}
+      <ViewRounded style={{ backgroundColor: "red" }}>
+        <View style={{ alignItems: "center" }}>
+          <View style={styles.imageContainer}>
+            <Image
+              style={styles.image}
+              source={require("@/assets/images/heroHome.jpg")}
+            />
+            <Overlay />
+          </View>
+          <View style={{ alignItems: "center" }}>
+            {TextHome.map((text, index) => (
+              <ThemedText
+                key={index}
+                type="italic"
+                style={{
+                  color: Colors.light.darkText,
+                  marginBottom: text.marginBottom,
+                }}
+              >
+                {text.content}
+              </ThemedText>
+            ))}
+          </View>
         </View>
         <View style={styles.linkContainer}>
           {HomeBtnText.map((text, index) => (
@@ -55,12 +57,12 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    overflow: "hidden",
     backgroundColor: Colors.light.background,
   },
   title: {
     textAlign: "center",
-    marginVertical: 80,
+    marginTop: 80,
+    marginBottom: 50,
     color: Colors.light.text,
   },
   imageContainer: {
