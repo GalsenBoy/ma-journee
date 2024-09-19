@@ -46,6 +46,6 @@ const styles = StyleSheet.create({
   },
   withoutBackground: {
     color: Colors.light.darkText,
-    marginTop: 20,
+    marginVertical: 20,
   },
 });
