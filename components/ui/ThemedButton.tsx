@@ -9,13 +9,13 @@ import { ThemedText } from "./ThemedText";
 type ThemedButtonProps = TouchableOpacityProps & {
   type?: "default" | "withoutBackground";
   title: string;
-  textStyle?: any;
+  textStyle: any;
 };
 
 export default function ThemedButton({
   // style,
-  type = "default",
   textStyle,
+  type = "default",
   title,
   ...rest
 }: ThemedButtonProps) {
@@ -24,6 +24,7 @@ export default function ThemedButton({
       style={[
         type === "default" ? styles.default : undefined,
         type === "withoutBackground" ? styles.withoutBackground : undefined,
+        // style,
       ]}
       {...rest}
     >
@@ -36,8 +37,8 @@ export default function ThemedButton({
 
 const styles = StyleSheet.create({
   default: {
-    backgroundColor: Colors.light.text,
-    padding: 10,
+    backgroundColor: Colors.light.darkText,
+    paddingVertical: 15,
     borderRadius: 12,
   },
   withoutBackground: {

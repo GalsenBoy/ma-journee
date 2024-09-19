@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     flex: 1,
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
-    backgroundColor: Colors.dark.background,
+    backgroundColor: Colors.light.text,
     alignItems: "center",
     padding: 24,
     overflow: "hidden",

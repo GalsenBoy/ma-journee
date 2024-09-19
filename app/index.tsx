@@ -3,12 +3,13 @@ import ThemedButton from "@/components/ui/ThemedButton";
 import { ThemedText } from "@/components/ui/ThemedText";
 import ViewRounded from "@/components/ui/ViewRounded";
 import { Colors } from "@/constants/Colors";
+import { TextHome } from "@/constants/home/TextHome";
 import { Image, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Home() {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <ThemedText
         type="title"
         style={[styles.title, { color: Colors.light.text }]}
@@ -24,28 +25,32 @@ export default function Home() {
           <Overlay />
         </View>
         <View>
-          {["Raconter votre journée", "Un souvenir à la fois"].map(
-            (text, index) => (
-              <ThemedText
-                key={index}
-                type="italic"
-                style={{ color: Colors.light.background }}
-              >
-                {text}
-              </ThemedText>
-            )
-          )}
+          {TextHome.map((text, index) => (
+            <ThemedText
+              key={index}
+              type="italic"
+              style={{
+                color: Colors.light.darkText,
+                marginBottom: text.marginBottom,
+              }}
+            >
+              {text.content}
+            </ThemedText>
+          ))}
         </View>
         <View style={styles.buttonContainer}>
-          <ThemedButton title="bob" />
           <ThemedButton
+            title="S'inscrire"
+            textStyle={{ color: Colors.light.text }}
+          />
+          <ThemedButton
+            textStyle={{ color: Colors.light.darkText, marginTop: 15 }}
             type="withoutBackground"
-            title="bob"
-            textStyle={{ color: Colors.light.background }}
+            title="Se connecter"
           />
         </View>
       </ViewRounded>
-    </SafeAreaView>
+    </View>
   );
 }
 
@@ -60,8 +65,10 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     position: "relative",
-    width: 300,
-    height: 332,
+    marginTop: 30,
+    marginBottom: 50,
+    width: 250,
+    height: 282,
   },
   image: {
     height: "100%",
@@ -70,5 +77,6 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     width: "100%",
+    textAlign: "center",
   },
 });
