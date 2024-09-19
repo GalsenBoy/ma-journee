@@ -1,15 +1,19 @@
 import { Text, type TextProps, StyleSheet } from "react-native";
 
 export type ThemedTextProps = TextProps & {
-  lightColor?: string;
-  darkColor?: string;
-  type?: "default" | "title" | "defaultSemiBold" | "subtitle" | "link";
+  // lightColor?: string;
+  // darkColor?: string;
+  type?:
+    | "default"
+    | "title"
+    | "defaultSemiBold"
+    | "subtitle"
+    | "link"
+    | "italic";
 };
 
 export function ThemedText({
   style,
-  lightColor,
-  darkColor,
   type = "default",
   ...rest
 }: ThemedTextProps) {
@@ -21,6 +25,7 @@ export function ThemedText({
         type === "defaultSemiBold" ? styles.defaultSemiBold : undefined,
         type === "subtitle" ? styles.subtitle : undefined,
         type === "link" ? styles.link : undefined,
+        type === "italic" ? styles.italic : undefined,
         style,
       ]}
       {...rest}
@@ -38,18 +43,33 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     fontWeight: "600",
   },
+  bigTitle: {
+    fontSize: 64,
+    fontWeight: "bold",
+    lineHeight: 40,
+  },
   title: {
     fontSize: 32,
     fontWeight: "bold",
+    lineHeight: 32,
+  },
+  miniTitle: {
+    fontSize: 28,
+    fontWeight: "semibold",
     lineHeight: 32,
   },
   subtitle: {
     fontSize: 20,
     fontWeight: "bold",
   },
+  italic: {
+    fontStyle: "italic",
+    fontSize: 28,
+    lineHeight: 32,
+  },
   link: {
     lineHeight: 30,
-    fontSize: 16,
-    color: "#0a7ea4",
+    fontSize: 20,
+    fontWeight: "bold",
   },
 });
