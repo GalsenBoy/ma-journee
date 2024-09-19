@@ -1,3 +1,4 @@
+import { Colors } from "@/constants/Colors";
 import { Text, type TextProps, StyleSheet } from "react-native";
 
 export type ThemedTextProps = TextProps & {
@@ -71,5 +72,7 @@ const styles = StyleSheet.create({
     lineHeight: 30,
     fontSize: 20,
     fontWeight: "bold",
+    textAlign: "center",
+    color: Colors.light.background,
   },
 });
