@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   overlay: {
     ...StyleSheet.absoluteFillObject,
     position: "absolute",
-    backgroundColor: Colors.light.darkText,
+    backgroundColor: Colors.light.text,
     width: "100%",
     opacity: 0.5,
     height: "100%",
