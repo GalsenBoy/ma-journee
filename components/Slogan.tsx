@@ -11,12 +11,12 @@ export default function Slogan() {
     {
       text: "un souvenir à la fois.",
       type: "italic",
-      style: { marginTop: 10 },
+      style: { marginTop: 13 },
     },
   ];
   return (
     <View>
-      <ThemedText style={{ textAlign: "center" }} type="title">
+      <ThemedText style={styles.title} type="title">
         Bienvenue sur Ma journée
       </ThemedText>
       <View style={styles.slogan}>
@@ -31,8 +31,11 @@ export default function Slogan() {
 }
 
 const styles = StyleSheet.create({
+  title: {
+    textAlign: "center",
+    marginBottom: 70,
+  },
   slogan: {
-    marginTop: 25,
     alignItems: "center",
   },
 });
