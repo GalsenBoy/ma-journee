@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.light.text,
     color: Colors.light.background,
     borderRadius: GlobalStyle.borderRadius,
-    paddingVertical: 15,
+    paddingVertical: 13,
+
     width: "85%",
   },
   withoutBackground: {

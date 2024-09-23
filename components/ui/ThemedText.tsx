@@ -65,8 +65,7 @@ const styles = StyleSheet.create({
   },
   italic: {
     fontStyle: "italic",
-    fontSize: 28,
-    lineHeight: 32,
+    fontSize: 32,
   },
   link: {
     lineHeight: 30,
