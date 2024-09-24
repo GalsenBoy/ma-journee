@@ -1,34 +1,36 @@
 import HomeLink from "@/components/HomeLink";
 import Slogan from "@/components/Slogan";
-import { ThemedText } from "@/components/ui/ThemedText";
-import { Colors } from "@/constants/Colors";
-import { Image, StyleSheet, View } from "react-native";
+import { ImageBackground, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Home() {
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.view}>
-        <Image source={require("@/assets/images/home.png")} />
-        <View>
+    <View style={styles.container}>
+      <ImageBackground
+        style={styles.image}
+        source={require("@/assets/images/hero2.jpeg")}
+      >
+        <View style={styles.view}>
           <Slogan />
+          <HomeLink />
         </View>
-        <HomeLink />
-      </View>
-    </SafeAreaView>
+      </ImageBackground>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.light.background,
   },
   view: {
+    paddingTop: 100,
+    backgroundColor: "rgba(100, 110, 110, 0.6)",
     flex: 1,
-    justifyContent: "space-around",
+    justifyContent: "space-evenly",
+    alignItems: "center",
   },
-  title: {
-    textAlign: "center",
+  image: {
+    flex: 1,
   },
 });
