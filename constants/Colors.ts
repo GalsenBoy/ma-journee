@@ -8,7 +8,7 @@ const tintColorDark = '#fff';
 
 export const Colors = {
   light: {
-    // textWhite: '#F0F5F4',
+    bgVive: "#4B2D9F",
     background: '#F6F6F6',
     text: "#1E1E1E",
     goodMood: "7FD178",

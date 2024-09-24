@@ -28,15 +28,14 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   default: {
-    backgroundColor: Colors.light.text,
+    backgroundColor: "#4B2D9F",
     color: Colors.light.background,
     borderRadius: GlobalStyle.borderRadius,
     paddingVertical: 13,
-
     width: "85%",
   },
   withoutBackground: {
-    color: Colors.light.text,
+    color: Colors.light.bgVive,
     marginVertical: 20,
   },
 });

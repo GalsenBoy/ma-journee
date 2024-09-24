@@ -4,6 +4,7 @@ import { Link } from "expo-router";
 import { Controller, useForm } from "react-hook-form";
 import { Pressable, StyleSheet, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useState } from "react";
 
 export default function SignIn() {
   type SignInType = {
@@ -15,6 +16,7 @@ export default function SignIn() {
     handleSubmit,
     formState: { errors },
   } = useForm<SignInType>();
+  const [focusedField, setFocusedField] = useState<string | null>(null);
   const onSubmit = (data: SignInType) => console.log(data);
   return (
     <SafeAreaView style={styles.container}>
@@ -32,9 +34,16 @@ export default function SignIn() {
               <View>
                 <ThemedText type="default">Email</ThemedText>
                 <TextInput
-                  style={GlobalStyle.input}
+                  style={[
+                    GlobalStyle.input,
+                    focusedField === "email" && GlobalStyle.inputFocused, // Applique le style de focus si actif
+                  ]}
                   placeholder="Email"
-                  onBlur={onBlur}
+                  onBlur={() => {
+                    onBlur();
+                    setFocusedField(null);
+                  }}
+                  onFocus={() => setFocusedField("email")}
                   onChangeText={onChange}
                   value={value}
                 />
@@ -51,12 +60,22 @@ export default function SignIn() {
               <View>
                 <ThemedText type="default">Mot de passe</ThemedText>
                 <TextInput
-                  style={GlobalStyle.input}
+                  style={[
+                    GlobalStyle.input,
+                    focusedField === "password" && GlobalStyle.inputFocused, // Applique le style de focus si actif
+                  ]}
                   placeholder="Mot de passe"
-                  onBlur={onBlur}
+                  onBlur={() => {
+                    onBlur();
+                    setFocusedField(null);
+                  }}
+                  onFocus={() => setFocusedField("password")}
                   onChangeText={onChange}
                   value={value}
                 />
+                <ThemedText style={[GlobalStyle.link, { textAlign: "right" }]}>
+                  Mot de passe oublié
+                </ThemedText>
               </View>
             )}
             name="password"
@@ -69,8 +88,11 @@ export default function SignIn() {
           >
             <ThemedText type="link">Connexion</ThemedText>
           </Pressable>
-          <ThemedText>
-            Pas de compte ? <Link href={"/SignUp"}>Inscrivez-vous</Link>
+          <ThemedText style={GlobalStyle.linkContainer}>
+            Pas de compte?{" "}
+            <Link style={GlobalStyle.link} href={"/SignUp"}>
+              Inscrivez-vous
+            </Link>
           </ThemedText>
         </View>
       </View>
@@ -88,5 +110,6 @@ const styles = StyleSheet.create({
   formContainer: {
     marginTop: 100,
     paddingHorizontal: 24,
+    flex: 1,
   },
 });

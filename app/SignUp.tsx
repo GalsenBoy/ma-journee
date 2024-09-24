@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { ThemedText } from "@/components/ui/ThemedText";
 import { GlobalStyle } from "@/constants/GlobalStyle";
 import { Link } from "expo-router";
+import { useState } from "react";
 
 type SignUpType = {
   nomComplet: string;
@@ -20,6 +21,8 @@ export default function SingnUp() {
   } = useForm<SignUpType>();
   const onSubmit = (data: SignUpType) => console.log(data);
 
+  const [focusedField, setFocusedField] = useState<string | null>(null);
+
   return (
     <SafeAreaView style={styles.container}>
       <ThemedText type="title" style={styles.title}>
@@ -35,11 +38,15 @@ export default function SingnUp() {
             <View>
               <ThemedText type="default">Nom complet</ThemedText>
               <TextInput
-                style={GlobalStyle.input}
+                style={[
+                  GlobalStyle.input,
+                  focusedField === "nomComplet" && GlobalStyle.inputFocused,
+                ]}
                 placeholder="Nom complet"
                 onBlur={onBlur}
                 onChangeText={onChange}
                 value={value}
+                onFocus={() => setFocusedField("nomComplet")}
               />
             </View>
           )}
@@ -56,10 +63,14 @@ export default function SingnUp() {
             <View>
               <ThemedText type="default">Pseudo</ThemedText>
               <TextInput
-                style={GlobalStyle.input}
+                style={[
+                  GlobalStyle.input,
+                  focusedField === "pseudo" && GlobalStyle.inputFocused,
+                ]}
                 placeholder="Pseudo"
                 onBlur={onBlur}
                 onChangeText={onChange}
+                onFocus={() => setFocusedField("pseudo")}
                 value={value}
               />
             </View>
@@ -75,9 +86,13 @@ export default function SingnUp() {
             <View>
               <ThemedText type="default">Email</ThemedText>
               <TextInput
-                style={GlobalStyle.input}
+                style={[
+                  GlobalStyle.input,
+                  focusedField === "email" && GlobalStyle.inputFocused,
+                ]}
                 placeholder="Email"
                 onBlur={onBlur}
+                onFocus={() => setFocusedField("email")}
                 onChangeText={onChange}
                 value={value}
               />
@@ -94,9 +109,13 @@ export default function SingnUp() {
             <View>
               <ThemedText type="default">Mot de passe</ThemedText>
               <TextInput
-                style={GlobalStyle.input}
+                style={[
+                  GlobalStyle.input,
+                  focusedField === "password" && GlobalStyle.inputFocused,
+                ]}
                 placeholder="Mot de passe"
                 onBlur={onBlur}
+                onFocus={() => setFocusedField("password")}
                 onChangeText={onChange}
                 value={value}
               />
@@ -106,11 +125,11 @@ export default function SingnUp() {
         />
       </View>
       <Pressable style={GlobalStyle.button} onPress={handleSubmit(onSubmit)}>
-        <ThemedText type="link">Connexion</ThemedText>
+        <ThemedText type="link">Inscription</ThemedText>
       </Pressable>
-      <ThemedText style={styles.linkContainer}>
+      <ThemedText style={GlobalStyle.linkContainer}>
         Vous avez dejà un compte?{" "}
-        <Link style={styles.link} href={"/SignIn"}>
+        <Link style={GlobalStyle.link} href={"/SignIn"}>
           connectez-vous
         </Link>
       </ThemedText>
@@ -128,13 +147,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginVertical: 70,
   },
-  linkContainer: {
-    marginTop: 20,
-    textAlign: "center",
-  },
-  link: {
-    fontWeight: "bold",
-  },
+
   image: {
     width: "100%",
     height: 200,
