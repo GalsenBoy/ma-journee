@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   },
   view: {
     paddingTop: 100,
-    backgroundColor: "rgba(251, 192, 147, 0.6)",
+    backgroundColor: "rgba(251, 251, 251, 0.2)",
     flex: 1,
     justifyContent: "space-evenly",
     alignItems: "center",

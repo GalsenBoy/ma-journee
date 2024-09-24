@@ -110,5 +110,6 @@ const styles = StyleSheet.create({
   formContainer: {
     marginTop: 100,
     paddingHorizontal: 24,
+    flex: 1,
   },
 });

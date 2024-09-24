@@ -125,7 +125,7 @@ export default function SingnUp() {
         />
       </View>
       <Pressable style={GlobalStyle.button} onPress={handleSubmit(onSubmit)}>
-        <ThemedText type="link">Connexion</ThemedText>
+        <ThemedText type="link">Inscription</ThemedText>
       </Pressable>
       <ThemedText style={GlobalStyle.linkContainer}>
         Vous avez dejà un compte?{" "}
