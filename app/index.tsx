@@ -1,7 +1,6 @@
 import HomeLink from "@/components/HomeLink";
 import Slogan from "@/components/Slogan";
 import { ImageBackground, StyleSheet, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Home() {
   return (
@@ -25,7 +24,7 @@ const styles = StyleSheet.create({
   },
   view: {
     paddingTop: 100,
-    backgroundColor: "rgba(100, 110, 110, 0.6)",
+    backgroundColor: "rgba(251, 192, 147, 0.6)",
     flex: 1,
     justifyContent: "space-evenly",
     alignItems: "center",
