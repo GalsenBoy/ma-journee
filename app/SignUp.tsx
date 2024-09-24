@@ -3,23 +3,22 @@ import { useForm, Controller } from "react-hook-form";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ThemedText } from "@/components/ui/ThemedText";
 import { GlobalStyle } from "@/constants/GlobalStyle";
-import { Colors } from "@/constants/Colors";
 import { Link } from "expo-router";
 
-type LoginType = {
+type SignUpType = {
   nomComplet: string;
   pseudo: string;
   email: string;
   password: string;
 };
 
-export default function Login() {
+export default function SingnUp() {
   const {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginType>();
-  const onSubmit = (data: LoginType) => console.log(data);
+  } = useForm<SignUpType>();
+  const onSubmit = (data: SignUpType) => console.log(data);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -36,7 +35,7 @@ export default function Login() {
             <View>
               <ThemedText type="default">Nom complet</ThemedText>
               <TextInput
-                style={styles.input}
+                style={GlobalStyle.input}
                 placeholder="Nom complet"
                 onBlur={onBlur}
                 onChangeText={onChange}
@@ -57,7 +56,7 @@ export default function Login() {
             <View>
               <ThemedText type="default">Pseudo</ThemedText>
               <TextInput
-                style={styles.input}
+                style={GlobalStyle.input}
                 placeholder="Pseudo"
                 onBlur={onBlur}
                 onChangeText={onChange}
@@ -76,7 +75,7 @@ export default function Login() {
             <View>
               <ThemedText type="default">Email</ThemedText>
               <TextInput
-                style={styles.input}
+                style={GlobalStyle.input}
                 placeholder="Email"
                 onBlur={onBlur}
                 onChangeText={onChange}
@@ -95,7 +94,7 @@ export default function Login() {
             <View>
               <ThemedText type="default">Mot de passe</ThemedText>
               <TextInput
-                style={styles.input}
+                style={GlobalStyle.input}
                 placeholder="Mot de passe"
                 onBlur={onBlur}
                 onChangeText={onChange}
@@ -106,12 +105,12 @@ export default function Login() {
           name="password"
         />
       </View>
-      <Pressable style={styles.button} onPress={handleSubmit(onSubmit)}>
+      <Pressable style={GlobalStyle.button} onPress={handleSubmit(onSubmit)}>
         <ThemedText type="link">Connexion</ThemedText>
       </Pressable>
       <ThemedText style={styles.linkContainer}>
         Vous avez dejà un compte?{" "}
-        <Link style={styles.link} href={"/Login"}>
+        <Link style={styles.link} href={"/SignIn"}>
           connectez-vous
         </Link>
       </ThemedText>
@@ -122,21 +121,9 @@ export default function Login() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginHorizontal: 24,
+    paddingHorizontal: 24,
   },
-  input: {
-    paddingVertical: 14,
-    marginVertical: 12,
-    borderWidth: 1,
-    paddingLeft: 10,
-    borderRadius: GlobalStyle.borderRadius,
-  },
-  button: {
-    marginTop: 35,
-    paddingVertical: 13,
-    backgroundColor: Colors.light.text,
-    borderRadius: GlobalStyle.borderRadius,
-  },
+
   title: {
     textAlign: "center",
     marginVertical: 70,
@@ -147,5 +134,9 @@ const styles = StyleSheet.create({
   },
   link: {
     fontWeight: "bold",
+  },
+  image: {
+    width: "100%",
+    height: 200,
   },
 });

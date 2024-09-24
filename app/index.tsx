@@ -1,8 +1,5 @@
 import HomeLink from "@/components/HomeLink";
 import Slogan from "@/components/Slogan";
-import Overlay from "@/components/ui/Overlay";
-import { ThemedText } from "@/components/ui/ThemedText";
-import { Colors } from "@/constants/Colors";
 import { ImageBackground, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 

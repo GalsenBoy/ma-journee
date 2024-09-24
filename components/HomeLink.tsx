@@ -6,10 +6,10 @@ import { GlobalStyle } from "@/constants/GlobalStyle";
 export default function HomeLink() {
   return (
     <View style={styles.view}>
-      <Link href={"/Login"} style={[styles.common, styles.default]}>
+      <Link href={"/SignUp"} style={[styles.common, styles.default]}>
         S'inscrire
       </Link>
-      <Link href={"/Login"} style={[styles.common, styles.withoutBackground]}>
+      <Link href={"/SignIn"} style={[styles.common, styles.withoutBackground]}>
         Se connecter
       </Link>
     </View>
