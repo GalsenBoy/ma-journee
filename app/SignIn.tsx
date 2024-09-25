@@ -93,6 +93,7 @@ export default function SignIn() {
             <Link style={GlobalStyle.link} href={"/SignUp"}>
               Inscrivez-vous
             </Link>
+            <Link href={"/Home"}>Accueil</Link>
           </ThemedText>
         </View>
       </View>

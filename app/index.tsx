@@ -2,7 +2,7 @@ import HomeLink from "@/components/HomeLink";
 import Slogan from "@/components/Slogan";
 import { ImageBackground, StyleSheet, View } from "react-native";
 
-export default function Home() {
+export default function App() {
   return (
     <View style={styles.container}>
       <ImageBackground

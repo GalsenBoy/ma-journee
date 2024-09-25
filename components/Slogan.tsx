@@ -1,6 +1,5 @@
 import { StyleSheet, View } from "react-native";
 import { ThemedText } from "./ui/ThemedText";
-import { Colors } from "@/constants/Colors";
 
 export default function Slogan() {
   const slogansText: { text: string; type: "italic"; style?: {} }[] = [
