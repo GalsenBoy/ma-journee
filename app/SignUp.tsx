@@ -129,7 +129,7 @@ export default function SingnUp() {
       </Pressable>
       <ThemedText style={GlobalStyle.linkContainer}>
         Vous avez dejà un compte?{" "}
-        <Link style={GlobalStyle.link} href={"/SignIn"}>
+        <Link style={GlobalStyle.link} href={"/(auth)SignIn"}>
           connectez-vous
         </Link>
       </ThemedText>
