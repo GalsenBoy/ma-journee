@@ -24,7 +24,23 @@ export default function Home() {
         <AntDesign name="arrowright" size={24} color="black" />
       </View>
       <ThemedText type="title">Mes 7 derniers jours</ThemedText>
-      <Card>
+      <Card type="stresse">
+        <CardChildren
+          title="Lundi"
+          description={truncate(
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati a,quod pariatur numquam harum sed non corrupti aliquid enim esse quamexcepturi repudiandae nesciunt deserunt explicabo fugit animi eligendiratione?"
+          )}
+        />
+      </Card>
+      <Card type="fatigue">
+        <CardChildren
+          title="Lundi"
+          description={truncate(
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati a,quod pariatur numquam harum sed non corrupti aliquid enim esse quamexcepturi repudiandae nesciunt deserunt explicabo fugit animi eligendiratione?"
+          )}
+        />
+      </Card>
+      <Card type="anxieux">
         <CardChildren
           title="Lundi"
           description={truncate(

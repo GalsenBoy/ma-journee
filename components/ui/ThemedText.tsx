@@ -66,6 +66,7 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 20,
     fontWeight: "bold",
+    // lineHeight:32
   },
   italic: {
     fontStyle: "italic",

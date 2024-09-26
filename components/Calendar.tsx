@@ -16,13 +16,11 @@ export default function Calendar() {
 
 const styles = StyleSheet.create({
   calendar: {
-    height: 65,
-    width: 65,
+    height: 80,
+    width: 75,
     backgroundColor: Colors.light.textTwo,
-    borderRadius: GlobalStyle.borderRadius,
+    borderRadius: 18,
     justifyContent: "center",
     alignItems: "center",
-    // padding: 24,
-    // marginBottom: 24,
   },
 });

@@ -19,7 +19,9 @@ export default function CardChildren({
       <Calendar />
       <View style={styles.titles}>
         <ThemedText type="miniTitle">{title}</ThemedText>
-        <ThemedText>{description}</ThemedText>
+        <ThemedText numberOfLines={3} ellipsizeMode="tail">
+          {description}
+        </ThemedText>
       </View>
     </View>
   );
@@ -27,14 +29,11 @@ export default function CardChildren({
 
 const styles = StyleSheet.create({
   card: {
-    padding: 18,
     flexDirection: "row",
-    // justifyContent: "center",
+    alignItems: "center",
     gap: 24,
-    width: "80%",
   },
   titles: {
-    flexDirection: "column",
-    // paddingHorizontal: 10,
+    flexShrink: 1,
   },
 });
