@@ -16,7 +16,7 @@ export default function Home() {
     <SafeAreaView style={styles.container}>
       <Header />
       <View style={styles.cardOne}>
-        <ThemedText>Citation du jour</ThemedText>
+        <ThemedText type="subtitle">Citation du jour</ThemedText>
         <ThemedText>
           “La vie est un mystère qu’il faut vivre, et non un problème à
           résoudre.”
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
   cardOne: {
     height: 150,
     paddingLeft: 24,
-    backgroundColor: Colors.light.bgVive,
+    backgroundColor: "#df9726",
     borderRadius: GlobalStyle.borderRadius,
     justifyContent: "space-around",
   },

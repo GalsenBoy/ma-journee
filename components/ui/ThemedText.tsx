@@ -2,17 +2,7 @@ import { Colors } from "@/constants/Colors";
 import { Text, type TextProps, StyleSheet } from "react-native";
 
 export type ThemedTextProps = TextProps & {
-  // lightColor?: string;
-  // darkColor?: string;
-  type?:
-    | "default"
-    | "title"
-    | "defaultSemiBold"
-    | "subtitle"
-    | "link"
-    | "italic"
-    | "bigTitle"
-    | "miniTitle";
+  type?: keyof typeof styles;
 };
 
 export function ThemedText({
@@ -31,6 +21,8 @@ export function ThemedText({
         type === "italic" ? styles.italic : undefined,
         type === "bigTitle" ? styles.bigTitle : undefined,
         type === "miniTitle" ? styles.miniTitle : undefined,
+        type === "subtitleLight" ? styles.subtitleLight : undefined,
+
         style,
       ]}
       {...rest}
@@ -67,6 +59,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     // lineHeight:32
+  },
+  subtitleLight: {
+    fontSize: 20,
   },
   italic: {
     fontStyle: "italic",

@@ -6,7 +6,7 @@ import { Colors } from "@/constants/Colors";
 export default function Header() {
   return (
     <View style={styles.container}>
-      <ThemedText>Bonjour 👋 Noémie</ThemedText>
+      <ThemedText type="subtitle">Bonjour 👋 Noémie</ThemedText>
       <Ionicons name="notifications-outline" size={24} color="black" />
     </View>
   );
