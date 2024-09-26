@@ -10,7 +10,9 @@ export type ThemedTextProps = TextProps & {
     | "defaultSemiBold"
     | "subtitle"
     | "link"
-    | "italic";
+    | "italic"
+    | "bigTitle"
+    | "miniTitle";
 };
 
 export function ThemedText({
@@ -27,6 +29,8 @@ export function ThemedText({
         type === "subtitle" ? styles.subtitle : undefined,
         type === "link" ? styles.link : undefined,
         type === "italic" ? styles.italic : undefined,
+        type === "bigTitle" ? styles.bigTitle : undefined,
+        type === "miniTitle" ? styles.miniTitle : undefined,
         style,
       ]}
       {...rest}
@@ -55,8 +59,8 @@ const styles = StyleSheet.create({
     lineHeight: 32,
   },
   miniTitle: {
-    fontSize: 28,
-    fontWeight: "semibold",
+    fontSize: 24,
+    fontWeight: "bold",
     lineHeight: 32,
   },
   subtitle: {
