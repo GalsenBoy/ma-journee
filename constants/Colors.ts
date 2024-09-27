@@ -7,6 +7,7 @@ export const Colors = {
     bgVive: "#4B2D9F",
     background: '#F6F6F6',
     text: "#1E1E1E",
+    textTwo: "#F0F0F0",
     goodMood: "7FD178",
     badMood: "#D75F57",
     neutralMood: "#EBA352",
@@ -22,3 +23,5 @@ export const Colors = {
     tabIconSelected: tintColorDark,
   },
 };
+
+
