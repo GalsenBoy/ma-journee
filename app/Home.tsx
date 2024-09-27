@@ -9,9 +9,9 @@ import { StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Home() {
-  const truncate = (str: string) => {
-    return str.length > 92 ? str.substring(0, 92) + "..." : str;
-  };
+  // const truncate = (str: string) => {
+  //   return str.length > 92 ? str.substring(0, 92) + "..." : str;
+  // };
   return (
     <SafeAreaView style={styles.container}>
       <Header />
@@ -29,25 +29,19 @@ export default function Home() {
       <Card type="stresse">
         <CardChildren
           title="Lundi"
-          description={truncate(
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati a,quod pariatur numquam harum sed non corrupti aliquid enim esse quamexcepturi repudiandae nesciunt deserunt explicabo fugit animi eligendiratione?"
-          )}
+          description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati a,quod pariatur numquam harum sed non corrupti aliquid enim esse quamexcepturi repudiandae nesciunt deserunt explicabo fugit animi eligendiratione?"
         />
       </Card>
       <Card type="fatigue">
         <CardChildren
           title="Lundi"
-          description={truncate(
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati a,quod pariatur numquam harum sed non corrupti aliquid enim esse quamexcepturi repudiandae nesciunt deserunt explicabo fugit animi eligendiratione?"
-          )}
+          description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati a,quod pariatur numquam harum sed non corrupti aliquid enim esse quamexcepturi repudiandae nesciunt deserunt explicabo fugit animi eligendiratione?"
         />
       </Card>
       <Card type="anxieux">
         <CardChildren
           title="Lundi"
-          description={truncate(
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati a,quod pariatur numquam harum sed non corrupti aliquid enim esse quamexcepturi repudiandae nesciunt deserunt explicabo fugit animi eligendiratione?"
-          )}
+          description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati a,quod pariatur numquam harum sed non corrupti aliquid enim esse quamexcepturi repudiandae nesciunt deserunt explicabo fugit animi eligendiratione?"
         />
       </Card>
     </SafeAreaView>

@@ -7,7 +7,6 @@ import Calendar from "../Calendar";
 type CardChildrenProps = {
   title: string;
   description: string;
-  //   children: React.ReactNode;
 };
 
 export default function CardChildren({
@@ -15,15 +14,17 @@ export default function CardChildren({
   description,
 }: CardChildrenProps) {
   return (
-    <View style={styles.card}>
-      <Calendar />
-      <View style={styles.titles}>
-        <ThemedText type="miniTitle" style={{ marginBottom: 5 }}>
-          {title}
-        </ThemedText>
-        <ThemedText numberOfLines={2} ellipsizeMode="tail">
-          {description}
-        </ThemedText>
+    <View>
+      <View style={styles.card}>
+        <Calendar />
+        <View style={styles.titles}>
+          <ThemedText type="miniTitle" style={{ marginBottom: 5 }}>
+            {title}
+          </ThemedText>
+          <ThemedText numberOfLines={2} ellipsizeMode="tail">
+            {description}
+          </ThemedText>
+        </View>
       </View>
     </View>
   );
