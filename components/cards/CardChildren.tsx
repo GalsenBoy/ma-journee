@@ -18,10 +18,10 @@ export default function CardChildren({
     <View style={styles.card}>
       <Calendar />
       <View style={styles.titles}>
-        <ThemedText type="subtitle" style={{ marginBottom: 5 }}>
+        <ThemedText type="miniTitle" style={{ marginBottom: 5 }}>
           {title}
         </ThemedText>
-        <ThemedText numberOfLines={3} ellipsizeMode="tail">
+        <ThemedText numberOfLines={2} ellipsizeMode="tail">
           {description}
         </ThemedText>
       </View>

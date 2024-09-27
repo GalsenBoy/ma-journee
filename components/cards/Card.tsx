@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     borderRadius: GlobalStyle.borderRadius,
     paddingLeft: 24,
     paddingRight: 10,
-    paddingVertical: 10,
-    marginBottom: 24,
+    paddingVertical: 13,
+    marginBottom: 30,
   },
 });

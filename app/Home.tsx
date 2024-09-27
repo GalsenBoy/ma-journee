@@ -21,9 +21,11 @@ export default function Home() {
           “La vie est un mystère qu’il faut vivre, et non un problème à
           résoudre.”
         </ThemedText>
-        <AntDesign name="arrowright" size={24} color="black" />
+        <AntDesign name="arrowright" size={30} color="black" />
       </View>
-      <ThemedText type="title">Mes 7 derniers jours</ThemedText>
+      <ThemedText style={{ marginBottom: 24 }} type="title">
+        Mes 7 derniers jours
+      </ThemedText>
       <Card type="stresse">
         <CardChildren
           title="Lundi"
@@ -63,5 +65,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#df9726",
     borderRadius: GlobalStyle.borderRadius,
     justifyContent: "space-around",
+    marginBottom: 60,
   },
 });
