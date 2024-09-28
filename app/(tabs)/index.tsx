@@ -19,7 +19,7 @@ export default function Home() {
         </ThemedText>
         <AntDesign name="arrowright" size={30} color="black" />
       </View>
-      <ScrollView>
+      <ScrollView showsHorizontalScrollIndicator={false}>
         <ThemedText style={{ marginBottom: 24 }} type="title">
           Mes 7 derniers jours
         </ThemedText>
