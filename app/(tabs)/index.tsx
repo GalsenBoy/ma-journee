@@ -2,16 +2,12 @@ import Card from "@/components/cards/Card";
 import CardChildren from "@/components/cards/CardChildren";
 import Header from "@/components/layout/Header";
 import { ThemedText } from "@/components/ui/ThemedText";
-import { Colors } from "@/constants/Colors";
 import { GlobalStyle } from "@/constants/GlobalStyle";
 import { AntDesign } from "@expo/vector-icons";
 import { ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Home() {
-  // const truncate = (str: string) => {
-  //   return str.length > 92 ? str.substring(0, 92) + "..." : str;
-  // };
   return (
     <SafeAreaView style={styles.container}>
       <Header />
