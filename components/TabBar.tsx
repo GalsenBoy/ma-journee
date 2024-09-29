@@ -92,11 +92,15 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     paddingVertical: 15,
-    marginBottom: 20,
+    marginBottom: 25,
     shadowColor: Colors.light.text,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
+    marginHorizontal: 24,
+    borderRadius: GlobalStyle.borderRadius,
+    overflow: "hidden",
+    backgroundColor: "white",
   },
   tab: {
     flex: 1,
