@@ -1,5 +1,3 @@
-import { Colors } from "@/constants/Colors";
-import { GlobalStyle } from "@/constants/GlobalStyle";
 import { StyleSheet, View } from "react-native";
 import { ThemedText } from "../ui/ThemedText";
 import Calendar from "../Calendar";
@@ -18,7 +16,7 @@ export default function CardChildren({
       <View style={styles.card}>
         <Calendar />
         <View style={styles.titles}>
-          <ThemedText type="miniTitle" style={{ marginBottom: 5 }}>
+          <ThemedText type="subtitle" style={{ marginBottom: 5 }}>
             {title}
           </ThemedText>
           <ThemedText numberOfLines={2} ellipsizeMode="tail">
