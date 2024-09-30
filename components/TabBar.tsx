@@ -1,8 +1,7 @@
-import Post from "@/app/(tabs)/Post";
 import { Colors } from "@/constants/Colors";
 import { GlobalStyle } from "@/constants/GlobalStyle";
 import { AntDesign } from "@expo/vector-icons";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 
 type TabBarProps = {
   state: any;
