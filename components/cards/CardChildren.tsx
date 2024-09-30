@@ -1,5 +1,3 @@
-import { Colors } from "@/constants/Colors";
-import { GlobalStyle } from "@/constants/GlobalStyle";
 import { StyleSheet, View } from "react-native";
 import { ThemedText } from "../ui/ThemedText";
 import Calendar from "../Calendar";

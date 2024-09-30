@@ -3,7 +3,7 @@ import { Colors } from "@/constants/Colors";
 import { AntDesign, Ionicons } from "@expo/vector-icons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Tabs } from "expo-router";
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 export default function TabLayout() {
   return (
@@ -11,7 +11,8 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: "Home",
+          headerShown: false,
+          title: "Accueil",
           tabBarIcon: ({ color }) => (
             <FontAwesome size={28} name="home" color={color} />
           ),
@@ -20,6 +21,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="Agenda"
         options={{
+          headerShown: false,
           title: "Agenda",
           tabBarIcon: ({ color }) => (
             <AntDesign name="calendar" size={24} color={color} />
@@ -27,8 +29,24 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="Post"
+        options={{
+          headerShown: false,
+          title: "Créer",
+          tabBarIcon: ({ color }) => (
+            <AntDesign
+              style={styles.plus}
+              name="pluscircle"
+              size={24}
+              color="black"
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="Statistiques"
         options={{
+          headerShown: false,
           title: "Statistiques",
           tabBarIcon: ({ color }) => (
             <Ionicons name="stats-chart" size={24} color={color} />
@@ -38,9 +56,12 @@ export default function TabLayout() {
       <Tabs.Screen
         name="Settings"
         options={{
-          title: "Settings",
+          headerShown: false,
+          title: "Paramètres",
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="cog" color={color} />
+            <View style={styles.iconPostContainer}>
+              <AntDesign name="pluscircle" size={40} color="black" />
+            </View>
           ),
         }}
       />
@@ -49,7 +70,10 @@ export default function TabLayout() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: Colors.light.background,
+  iconPostContainer: {
+    height: 60, // Augmente la hauteur de l'icône
+    justifyContent: "center", // Centre verticalement
+    alignItems: "center", // Centre horizontalement
+    marginBottom: 5, // Ajoute de l'espace en bas pour l'ajuster
   },
 });

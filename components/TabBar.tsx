@@ -1,3 +1,4 @@
+import Post from "@/app/(tabs)/Post";
 import { Colors } from "@/constants/Colors";
 import { GlobalStyle } from "@/constants/GlobalStyle";
 import { AntDesign } from "@expo/vector-icons";
@@ -16,19 +17,27 @@ export default function TabBar({
 }: TabBarProps) {
   const icons = {
     index: (props: any) => (
-      <AntDesign name="home" size={24} color="black" {...props} />
+      <AntDesign name="home" size={30} color="black" {...props} />
     ),
 
     Agenda: (props: any) => (
-      <AntDesign name="calendar" size={24} color="black" {...props} />
+      <AntDesign name="calendar" size={30} color="black" {...props} />
+    ),
+    Post: (props: any) => (
+      <AntDesign
+        name="pluscircle"
+        size={50}
+        color={Colors.light.bgVive}
+        {...props}
+      />
     ),
 
     Statistiques: (props: any) => (
-      <AntDesign name="barschart" size={24} color="black" {...props} />
+      <AntDesign name="barschart" size={30} color="black" {...props} />
     ),
 
     Settings: (props: any) => (
-      <AntDesign name="setting" size={24} color="black" {...props} />
+      <AntDesign name="setting" size={30} color="black" {...props} />
     ),
   };
   return (
@@ -72,15 +81,18 @@ export default function TabBar({
             testID={options.tabBarTestID}
             onPress={onPress}
             onLongPress={onLongPress}
-            style={styles.tab}
+            style={[
+              styles.tab,
+              route.name === "Post" ? styles.postTab : styles.tab,
+            ]}
           >
             {icons[route.name as keyof typeof icons]({
               color: isFocused ? "#4B2D9F" : "#70726E",
             })}
 
-            <Text style={{ color: isFocused ? "#4B2D9F" : "#70726E" }}>
+            {/* <Text style={{ color: isFocused ? "#4B2D9F" : "#70726E" }}>
               {label}
-            </Text>
+            </Text> */}
           </TouchableOpacity>
         );
       })}
@@ -90,20 +102,25 @@ export default function TabBar({
 
 const styles = StyleSheet.create({
   container: {
+    position: "absolute",
+    bottom: 24,
     flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     paddingVertical: 15,
-    marginBottom: 25,
     shadowColor: Colors.light.text,
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: { width: 0, height: 5 },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     marginHorizontal: 24,
     borderRadius: GlobalStyle.borderRadius,
-    overflow: "hidden",
     backgroundColor: "white",
   },
   tab: {
     flex: 1,
     alignItems: "center",
+  },
+  postTab: {
+    top: -40,
   },
 });
